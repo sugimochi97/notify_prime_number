@@ -2,12 +2,14 @@ import tweepy
 import discord
 from discord.ext import tasks
 import json
+import os
 from datetime import datetime, timedelta, timezone
 
 IS_PRIME_NUMBER = 0
 IS_NOT_PRIME_NUMBER = 1
 JST = timezone(timedelta(hours=+9), 'JST')
-KEYS = json.load(open('Prime_API_keys.json'))
+# KEYS = json.load(open('Prime_API_keys.json'))
+KEYS = os.environ['KEYS']
 CK = KEYS['CONSUMER_KEY']
 CS = KEYS['CONSUMER_SECRET']
 AT = KEYS['ACCESS_TOKEN']
